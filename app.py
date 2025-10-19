@@ -10,8 +10,8 @@ import requests
 movies_list = pickle.load(open('movies.pkl','rb'))
 movies_list = pd.DataFrame(movies_list)
 
-# similarity = pickle.load(open('similarity.pkl','rb'))
-similarity = 'https://drive.google.com/file/d/1fxYE-iXTvkGRKUuYyZ0bT3lrQPqCLunb/view?usp=drive_link'
+similarity = pickle.load(open('similarity.pkl','rb'))
+# similarity = 'https://drive.google.com/file/d/1fxYE-iXTvkGRKUuYyZ0bT3lrQPqCLunb/view?usp=drive_link'
 st.title('Movie Recommender System')
 
 selected_movies_name = st.selectbox('Movies', movies_list['title'].values)
