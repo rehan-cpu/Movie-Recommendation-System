@@ -9,8 +9,12 @@ import requests
 
 movies_list = pickle.load(open('movies.pkl','rb'))
 movies_list = pd.DataFrame(movies_list)
+import os, pickle
 
-similarity = pickle.load(open('similarity.pkl','rb'))
+file_path = os.path.join(os.path.dirname(__file__), 'similarity.pkl')
+with open(file_path, 'rb') as f:
+    similarity = pickle.load(f)
+
 # similarity = 'https://drive.google.com/file/d/1fxYE-iXTvkGRKUuYyZ0bT3lrQPqCLunb/view?usp=drive_link'
 st.title('Movie Recommender System')
 
